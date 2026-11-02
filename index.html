@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Minha Formatura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Gochi+Hand&family=Dancing+Script:wght@600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=9">
+<style>
+  /* Link compartilhado: só a tela "Visualizar álbum" do programa, sem o editor */
+  body { background: #1d1836; }
+  .topbar, main.app, .v-close { display: none !important; }
+  .v-nav { padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px)); }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <button id="btnNovo"></button><button id="btnVer"></button>
+</header>
+<main class="app">
+  <input id="albumTitle">
+  <div id="themes"></div><button id="btnVideo"></button><button id="btnModelo"></button>
+  <div id="palettes"></div><div id="frames"></div><button id="btnFrameAll"></button>
+  <section id="layoutPanel"><div id="layouts"></div></section>
+  <button id="btnUpload"></button><div id="tray"></div><button id="btnAuto"></button>
+  <div id="stage" class="stage"></div>
+  <div id="strip"></div>
+  <button id="btnAdd"></button><button id="btnLeft"></button><button id="btnRight"></button><button id="btnDel"></button>
+</main>
+
+<div id="viewer" class="viewer">
+  <button id="vClose" class="v-close" aria-label="Fechar">✕</button>
+  <div id="bookHolder" class="book-holder">
+    <div id="bookScaler" class="book-scaler">
+      <div id="book" class="book"></div>
+    </div>
+  </div>
+  <div class="v-nav">
+    <button id="vPrev" class="btn round" aria-label="Página anterior">◀</button>
+    <span id="vInfo"></span>
+    <button id="vNext" class="btn round" aria-label="Próxima página">▶</button>
+  </div>
+</div>
+
+<input id="fileInput" type="file" accept="image/*" multiple hidden>
+<script>window.SOMENTE_VER = true;</script>
+<!-- o número da versão obriga o navegador a buscar os arquivos novos a cada atualização -->
+<script src="modelo-fotos.js?v=9"></script>
+<script src="app.js?v=9"></script>
+</body>
+</html>
